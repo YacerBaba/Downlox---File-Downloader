@@ -1,0 +1,112 @@
+@font-face {  font-family: 'NotoSans';  src: url('NotoSans-Regular.ttf');  }
+@font-face {  font-family: 'NotoSans';  src: url('NotoSans-Bold.ttf');  }
+@font-face {  font-family: 'NotoSans';  src: url('NotoSans-SemiBold.ttf');  }
+* {
+    -accent-color: #10d296;
+    -accent-color-hover: derive(-accent-color ,40%);
+    -primary-color: #1687d3;
+    -primary-color-hover: derive(-primary-color, 40%);
+    -warning-color: #af0c0c;
+    -warning-color-hover: derive(-warning-color, 40%);
+    -negative-color: #efefef;
+    -negative-color2: derive(-negative-color, -80%);
+    -d-bg0: #10242f;
+    -d-bg1: #2e4856;
+    -fx-focus-color: transparent;
+
+}
+.base {
+    -c-bg0: -d-bg0;
+    -c-bg1: -d-bg1;
+
+    -fx-background-color: -c-bg0;
+}
+
+#btn_addURL {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+#btn_addURL> SVGPath {
+    -fx-fill: -accent-color;
+}
+#btn_addURL:hover {
+    -fx-background-color: -c-bg1;
+    -fx-background-radius: 8;
+     -fx-border-color: #ffffff20;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+#btn_addURL:hover> SVGPath {
+    -fx-fill: -accent-color-hover;
+}
+.separator .line {
+    -fx-border-width: 1.5;
+    -fx-border-insets: 0;
+    -fx-border-color: -negative-color2 ;
+    -fx-padding: 2 0;
+}
+
+.actionButton {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 5;
+}
+.actionButton> SVGPath {
+    -fx-fill: -primary-color;
+}
+.actionButton:hover > SVGPath  {
+    -fx-fill: -primary-color-hover;
+}
+.actionButton.warning> SVGPath{
+    -fx-fill: -warning-color;
+}
+
+.actionButton.warning:hover > SVGPath  {
+    -fx-fill: -warning-color-hover;
+}
+
+HBox.search {
+    -fx-background-color: -c-bg1;
+    -fx-background-radius: 10;
+    -fx-border-color: derive(-c-bg1, 40%);
+    -fx-border-radius: 10;
+    -fx-padding: 0 5;
+}
+TextField.search {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -negative-color;
+    -fx-padding: 0 5;
+}
+Button.search {
+    -fx-padding: 5;
+    -fx-background-color: transparent;
+}
+Button.search> SVGPath {
+    -fx-fill: -negative-color;
+}
+#btn_about {
+    -fx-padding: 5;
+    -fx-background-color: transparent;
+}
+#btn_about> SVGPath {
+    -fx-fill: -negative-color;
+}
+
+
+
+
+.list-view {
+    -fx-background-color: -c-bg1;
+    -fx-background-radius: 10;
+    -fx-alignment: center;
+}.list-cell {
+    -fx-padding: 5;
+    -fx-background: transparent;
+    -fx-background-radius: 5;
+    -fx-alignment: center;
+}
+.list-cell:selected {
+    -fx-background-color: -primary-color;
+}

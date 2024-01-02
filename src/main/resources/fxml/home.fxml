@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="baseVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" styleClass="base" stylesheets="@../css/Home.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yacer.downlox.controllers.HomeController">
+   <children>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Button fx:id="btn_addURL" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+               <graphic>
+                  <SVGPath content="M342.3,371.3c-0.8,0-1.5,0.6-1.5,1.5v10.6h-10.6c-0.8,0-1.5,0.6-1.5,1.5v4.9c0,0.8,0.6,1.5,1.5,1.5h10.6v10.6c0,0.8,0.6,1.5,1.5,1.5h4.9c0.8,0,1.5-0.6,1.5-1.5v-10.6h10.6c0.8,0,1.5-0.6,1.5-1.5v-4.9c0-0.8-0.6-1.5-1.5-1.5h-10.6v-10.6c0-0.8-0.6-1.5-1.5-1.5H342.3z" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator orientation="VERTICAL" />
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Button fx:id="btn_playAll" mnemonicParsing="false" styleClass="actionButton">
+                     <graphic>
+                        <SVGPath content="M526.6,540h11.6c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.1c0-0.6-0.5-1.1-1.1-1.1l0,0h-11.6c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.5,539.5,526,540,526.6,540z M526.6,547.9h11.6c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.1c0-0.6-0.5-1.1-1.1-1.1l0,0h-11.6c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.5,547.5,526,547.9,526.6,547.9z M526.6,532.1h23c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.2c0-0.6-0.5-1.1-1.1-1.1l0,0h-23c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.5,531.6,526,532.1,526.6,532.1z M545.2,536.6l9.2,5.9c0.5,0.3,0.8,0.9,0.8,1.5c0,0.6-0.3,1.2-0.8,1.6l-9.2,5.9c-0.5,0.3-1.1,0.3-1.6,0.1c-0.5-0.3-0.8-0.8-0.8-1.4V538c0-0.9,0.7-1.6,1.6-1.6C544.6,536.4,544.9,536.5,545.2,536.6z" />
+                     </graphic></Button>
+                  <Button fx:id="btn_pauseAll" mnemonicParsing="false" styleClass="actionButton">
+                     <graphic>
+                        <SVGPath content="M526.3,532.2h23.5c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.2c0-0.6-0.5-1.1-1.1-1.1l0,0h-23.5c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.2,531.7,525.7,532.2,526.3,532.2z M526.3,540.3h11.9c0.6,0,1.1-0.5,1.1-1.1l0,0V537c0-0.6-0.5-1.1-1.1-1.1l0,0h-11.9c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.2,539.8,525.7,540.3,526.3,540.3z M526.3,548.4h11.9c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.2c0-0.6-0.5-1.1-1.1-1.1l0,0h-11.9c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.2,547.9,525.7,548.4,526.3,548.4z M554.4,537.1h-2.2c-0.6,0-1.1,0.5-1.1,1.1v12.5c0,0.6,0.5,1.1,1.1,1.1h2.2c0.6,0,1.1-0.5,1.1-1.1v-12.5C555.5,537.6,555,537.1,554.4,537.1z M547.2,538.2v12.5c0,0.6-0.5,1.1-1.1,1.1h-2.2c-0.6,0-1.1-0.5-1.1-1.1v-12.5c0-0.6,0.5-1.1,1.1-1.1l0,0h2.2C546.7,537.1,547.2,537.6,547.2,538.2C547.2,538.2,547.2,538.2,547.2,538.2z" />
+                     </graphic></Button>
+                  <Button fx:id="btn_deleteAll" mnemonicParsing="false">
+                     <graphic>
+                        <SVGPath content="M526.3,532.2h23.5c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.2c0-0.6-0.5-1.1-1.1-1.1l0,0h-23.5c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.2,531.7,525.7,532.2,526.3,532.2z M526.3,540.3h11.9c0.6,0,1.1-0.5,1.1-1.1l0,0V537c0-0.6-0.5-1.1-1.1-1.1l0,0h-11.9c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.2,539.8,525.7,540.3,526.3,540.3z M526.3,548.4h11.9c0.6,0,1.1-0.5,1.1-1.1l0,0v-2.2c0-0.6-0.5-1.1-1.1-1.1l0,0h-11.9c-0.6,0-1.1,0.5-1.1,1.1l0,0v2.2C525.2,547.9,525.7,548.4,526.3,548.4z M556.1,548.5c0.4,0.4,0.4,1,0,1.4c0,0,0,0,0,0l-1.6,1.6c-0.4,0.4-1,0.4-1.4,0c0,0,0,0,0,0l-4-4l-4,4c-0.4,0.4-1,0.4-1.4,0 c0,0,0,0,0,0l-1.6-1.6c-0.4-0.4-0.4-1,0-1.4c0,0,0,0,0,0l4-4.1l-4-4c-0.4-0.4-0.4-1,0-1.4c0,0,0,0,0,0l1.6-1.6c0.4-0.4,1-0.4,1.4,0 c0,0,0,0,0,0l4,4l4.1-4c0.4-0.4,1-0.4,1.4,0c0,0,0,0,0,0l1.6,1.6c0.4,0.4,0.4,1,0,1.4c0,0,0,0,0,0l-4,4.1L556.1,548.5z" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="actionButton" />
+                        <String fx:value="warning" />
+                     </styleClass>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <Pane HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" styleClass="search">
+               <children>
+                  <TextField fx:id="tf_search" promptText="Search..." styleClass="search">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Button fx:id="btn_search" mnemonicParsing="false" styleClass="search">
+                     <graphic>
+                        <SVGPath content="M556.7,551.7L552,547c0.6-1,1-2.2,1-3.4c0-1.7-0.6-3.3-1.8-4.5c-1.2-1.2-2.8-1.9-4.6-1.9c-3.6,0-6.4,2.9-6.4,6.4c0,3.5,2.9,6.4,6.4,6.4c1.2,0,2.4-0.3,3.4-1l4.7,4.7c0.3,0.3,0.6,0.4,1,0.4c0.4,0,0.8-0.2,1-0.4C557.2,553.2,557.2,552.3,556.7,551.7z M546.5,547.7c-2.2,0-4-1.8-4-4c0-1.1,0.5-2.1,1.2-2.8c0.8-0.8,1.8-1.2,2.8-1.2c2.2,0,4,1.8,4,4c0,1.1-0.5,2.1-1.2,2.8C548.6,547.2,547.6,547.7,546.5,547.7z" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </HBox>
+            <Button fx:id="btn_about" mnemonicParsing="false">
+               <graphic>
+                  <SVGPath content="M543,1490.4c-0.9,0-1.6,0.7-1.6,1.6s0.7,1.6,1.6,1.6h16.4c0.9,0,1.6-0.7,1.6-1.6s-0.7-1.6-1.6-1.6H543z M543,1497.7c-0.9,0-1.6,0.7-1.6,1.6c0,0.9,0.7,1.6,1.6,1.6h16.4c0.9,0,1.6-0.7,1.6-1.6c0-0.9-0.7-1.6-1.6-1.6H543z M543,1505.1c-0.9,0-1.6,0.7-1.6,1.6c0,0.9,0.7,1.6,1.6,1.6h16.4c0.9,0,1.6-0.7,1.6-1.6c0-0.9-0.7-1.6-1.6-1.6H543z" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <ListView fx:id="lv_downloads" prefWidth="900.0" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

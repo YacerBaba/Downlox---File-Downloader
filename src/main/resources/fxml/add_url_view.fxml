@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="5.0" styleClass=".transparent-base" stylesheets="@../css/Dialog.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yacer.downlox.controllers.AddUrlController">
+   <children>
+      <GridPane hgap="10.0" styleClass=".transparent-base" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="URL" />
+            <HBox alignment="CENTER_LEFT" styleClass="custom-textfield" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="tf_url" styleClass="custom-textfield" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label text="Directory" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER" styleClass="custom-textfield" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="tf_directory" prefWidth="200.0" styleClass="custom-textfield" />
+                  <Button fx:id="btn_chooseDirectory" mnemonicParsing="false"  styleClass="custom-textfield">
+                     <graphic>
+                        <SVGPath content="M614.9,600.6v9c0,1-0.9,1.9-1.9,1.9h-15.4c-1,0-1.9-0.9-1.9-1.9v-12.2c0-1,0.9-1.9,1.9-1.9h5.2c1,0,1.8,0.5,2.4,1.2l1,1.4c0.2,0.3,0.6,0.5,1,0.5h5.8C614.1,598.7,614.9,599.6,614.9,600.6z" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="File name" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" styleClass="custom-textfield" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="tf_fileName" styleClass="custom-textfield" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <stylesheets>
+            <URL value="@../css/Dialog.css" />
+         </stylesheets>
+      </GridPane>
+      <HBox fx:id="infoHB" spacing="5.0">
+         <children>
+            <ImageView fx:id="iv_fileType" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="lb_fileSize" prefWidth="200.0" text="size">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

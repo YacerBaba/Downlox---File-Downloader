@@ -1,0 +1,13 @@
+* {
+    -accent-color: #3fdbab;
+    -accent-color-hover: derive(-accent-color, 0%);
+    -primary-color: #449fdb;
+    -primary-color-hover: derive(-primary-color, -40%);
+    -warning-color: #bf3c3c;
+    -warning-color-hover: derive(-warning-color, -40%);
+    -d-bg0: #e2e6e8;
+    -d-bg1: #cbd0d2;
+    -negative-color: #1e1e1e;
+    -negative-color2: derive(-negative-color, 80%);
+
+}

@@ -1,0 +1,72 @@
+@font-face {  font-family: 'NotoSans';  src: url('NotoSans-Regular.ttf');  }
+@font-face {  font-family: 'NotoSans';  src: url('NotoSans-Bold.ttf');  }
+@font-face {  font-family: 'NotoSans';  src: url('NotoSans-SemiBold.ttf');  }
+* {
+    -fx-focus-color: transparent;
+    -accent-color: #10d296;
+    -accent-color-hover: derive(-accent-color ,40%);
+    -primary-color: #1687d3;
+    -primary-color-hover: derive(-primary-color, 40%);
+    -warning-color: #af0c0c;
+    -warning-color-hover: derive(-warning-color, 40%);
+    -negative-color: #efefef;
+    -negative-color2: derive(-negative-color, -20%);
+    -d-bg0: #10242f;
+    -d-bg1: #2e4856;
+
+    -c-bg0: -d-bg0;
+    -c-bg1: -d-bg1;
+}
+.transparent-base {
+    -fx-background-color: transparent;
+}
+.dialog-pane {
+    -fx-background-color: -c-bg1;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+}
+.dialog-pane:header .header-panel {
+    -fx-background-color: -c-bg0;
+    -fx-padding: 20 10;
+    -fx-background-radius: 5;
+}
+.dialog-pane:header .header-panel .label{
+    -fx-font-size: 24;
+}
+
+
+*.label, *.button {
+    -fx-text-fill: -negative-color;
+}
+.button {
+    -fx-cursor: hand;
+}
+*.default-button {
+    -fx-background-color: -primary-color;
+}
+*.cancel-button {
+    -fx-background-color: -negative-color2;
+}
+
+
+
+HBox.custom-textfield {
+    -fx-background-color: -c-bg1;
+    -fx-background-radius: 10;
+    -fx-border-color: derive(-c-bg1, 40%);
+    -fx-border-radius: 10;
+    -fx-padding: 0 5;
+}
+TextField.custom-textfield {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -negative-color;
+    -fx-padding: 0 5;
+}
+Button.custom-textfield {
+    -fx-padding: 5;
+    -fx-background-color: transparent;
+}
+Button.custom-textfield> SVGPath {
+    -fx-fill: -negative-color;
+}

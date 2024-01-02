@@ -1,0 +1,76 @@
+* {
+    -accent-color: #10d296;
+    -primary-color: #1687d3;
+    -fx-font-family: 'Noto Sans';
+}
+
+#itemHB {
+    -fx-background-color: derive(-primary-color, 40%);
+    -fx-background-radius: 5;
+}
+
+#itemHB:stop {
+    -primary-color: #707579;
+}
+
+Label {
+    -fx-font-size: 15;
+    -fx-text-fill: derive(-primary-color, -40%);
+}
+
+#itemHB:stop Label {
+    -primary-color: #707579;
+}
+
+#itemHB:stop Label .text {
+    -fx-strikethrough: true;
+}
+
+Button {
+    -fx-cursor: hand;
+    -fx-padding: 4;
+    -fx-background-radius: 5;
+    -fx-background-color: transparent;
+}
+
+#itemHB:stop Button {
+    -primary-color: #707579;
+}
+
+Button:hover {
+    -fx-background-color: derive(-primary-color, 40%);
+}
+
+SVGPath {
+    -fx-fill: derive(-primary-color, -20%);
+}
+
+#itemHB:stop SVGPath {
+    -primary-color: #707579;
+}
+
+.progress-bar {
+    -fx-pref-height: 25;
+    -fx-pref-width: 200;
+    -fx-background-insets: 0;
+}
+
+#itemHB:stop .progress-bar, #itemHB:stop #itemProgressL {
+    visibility: hidden;
+}
+
+.progress-bar .track {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
+
+.progress-bar .bar {
+    -fx-background-color: -accent-color;
+    -fx-background-insets: 2.5;
+}
+
+.item-on-error {
+    -fx-background-color: #707579;
+    -fx-font-size: 15;
+}
