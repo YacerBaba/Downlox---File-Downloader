@@ -88,7 +88,6 @@ public class ItemController implements Initializable {
         var unit = regex[1];
         lb_fileSIze.setText(size);
         lb_sizeUnit.setText(unit);
-//        Double percentage = ((double) download.getDownloadedBytes()) / ((double) download.getSize()) * 100;
         lb_status.setText(download.getStatus().toString());
         iv_fileIcon.setImage(new Image(getClass().getResourceAsStream(download.getType().getIconPath())));
         if (download.getStatus() == Status.IN_PROGRESS) {
@@ -172,7 +171,7 @@ public class ItemController implements Initializable {
 
         btn_openLocation.setOnAction(event -> {
             System.out.println("Open location clicked");
-            fileLocationService.execute(download.getDestination_path() + "/" + download.getTitle() + "." + download.getType());
+            fileLocationService.execute(download.getDestination_path() + "/");
         });
     }
 
@@ -216,6 +215,7 @@ public class ItemController implements Initializable {
         switch (status) {
             case COMPLETED -> {
                 lb_status.setText("Completed");
+                lb_progress.setText("100,00 %");
                 pb_progressIndicator.setProgress(1.0);
                 setPlayButtonIcon(null);
                 setCancelButtonIcon(CustomSVG.DELETE);

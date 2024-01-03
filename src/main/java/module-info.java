@@ -11,6 +11,7 @@ module com.yacer.downlox {
     requires java.persistence;
     requires org.eclipse.persistence.jpa;
     requires java.sql;
+    requires org.apache.commons.lang3;
     requires com.jthemedetector;
     requires java.desktop;
     requires org.slf4j;
