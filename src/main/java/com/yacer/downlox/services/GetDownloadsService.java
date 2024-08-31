@@ -9,7 +9,7 @@ import java.util.List;
 public class GetDownloadsService {
 
 
-    public List<Download> execute() {
+    public List<Download> all() {
         try {
             var dao = new DownloadDAO(EMHelper.getEntityManager());
             return dao.findAll();
@@ -18,9 +18,14 @@ public class GetDownloadsService {
         }
     }
 
-//    public List<Download> getByKeyword(String keyword) {
-//        return dao.findDownloadsByKeyword(keyword);
-//    }
+    public List<Download> findByKeyword(String keyword) {
+        try {
+            var dao = new DownloadDAO(EMHelper.getEntityManager());
+            return dao.findByKeyword(keyword);
+        } finally {
+            EMHelper.closeEntityManager();
+        }
+    }
 
 
 }

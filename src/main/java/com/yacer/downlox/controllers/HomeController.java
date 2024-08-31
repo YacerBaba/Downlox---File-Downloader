@@ -15,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -22,10 +24,11 @@ import javafx.scene.shape.SVGPath;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Pair;
+import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -90,7 +93,7 @@ public class HomeController implements Initializable {
                 }
                 if (change.wasRemoved()) {
                     for (Download item : change.getRemoved()) {
-                        getDownloadsObservableList().removeIf(HBox -> Objects.equals(HBox.getId(), item.getId()));
+                        getDownloadsObservableList().removeIf(download -> Objects.equals(download.getId(), item.getId()));
                     }
                 }
             }
@@ -98,8 +101,24 @@ public class HomeController implements Initializable {
         lv_downloads.setItems(itemsViewObservableList);
 
         CompletableFuture.runAsync(() -> {
-            var downloads = getDownloadsService.execute();
+            var downloads = getDownloadsService.all();
             DownloadUtils.addItems(downloads);
+        });
+
+        // Auto-completion feature commented because it has errors with controls.fx
+//        var autoCompletion = TextFields.bindAutoCompletion(tf_search, request -> {
+//            return getDownloadsService.findByKeyword(request.getUserText());
+//        });
+//        autoCompletion.setPrefWidth(tf_search.getPrefWidth());
+
+        tf_search.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.ENTER) {
+                String word = tf_search.getText();
+                if (word.isEmpty()) return;
+                var downloads = getDownloadsService.findByKeyword(word);
+                itemsViewObservableList.clear();
+                DownloadUtils.addItems(downloads);
+            }
         });
 
         btn_addURL.setOnAction(event -> {

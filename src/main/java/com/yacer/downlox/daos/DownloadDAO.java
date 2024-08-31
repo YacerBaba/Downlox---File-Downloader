@@ -2,7 +2,6 @@ package com.yacer.downlox.daos;
 
 import com.yacer.downlox.models.Download;
 import com.yacer.downlox.enums.Status;
-import com.yacer.downlox.utils.DbUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -25,10 +24,13 @@ public class DownloadDAO {
         return typedQuery.getResultList();
     }
 
-    public List<Download> findDownloadsByKeyword(String keyword) {
-        TypedQuery<Download> typedQuery = manager.createNamedQuery("Download.findByKeyword", Download.class);
-        typedQuery.setParameter("keyword", keyword);
-        return typedQuery.getResultList();
+    public List<Download> findByKeyword(String keyword) {
+        var query = manager.createNativeQuery(
+                "SELECT * FROM downloads order by _levenshtein_ratio(title, ?) DESC;",
+                Download.class
+        );
+        query.setParameter(1, keyword);
+        return query.getResultList();
     }
 
     public Download addDownload(Download download) {

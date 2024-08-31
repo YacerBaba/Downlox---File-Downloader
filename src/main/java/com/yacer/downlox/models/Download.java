@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 )
 @NamedQueries({
         @NamedQuery(name = "Download.findAll", query = "SELECT d FROM Download d where d.status <> :deletedStatus"),
-        @NamedQuery(name = "Download.findByKeyword", query = "select d from Download  d where d.title = :keyword"),
 })
 public class Download {
     @Id
@@ -152,16 +151,6 @@ public class Download {
 
     @Override
     public String toString() {
-        return "Download{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", size=" + size +
-                ", downloadedBytes=" + downloadedBytes +
-                ", status=" + status +
-                ", downloadUrl='" + downloadUrl + '\'' +
-                ", destination_path='" + destination_path + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                '}';
+        return title;
     }
 }
